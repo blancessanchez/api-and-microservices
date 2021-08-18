@@ -59,7 +59,23 @@ app.get('/', (req, res) => {
 //   res.send(jsonObj);
 // }).post();
 
+// use body-parser to parse POS requests
+// update dependencies
+// "dependencies": {
+//   "body-parser": "^1.19.0",
+// }
+// declare on top of file
+// var bodyParser = require('body-parser');
+// use body-parser
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
+// get data from POST requests
+app.post('/name', function(req, res) {
+  // Handle the data in the request
+  var string = req.body.first + " " + req.body.last;
+  res.json({ name: string });
+});
 
 
 
